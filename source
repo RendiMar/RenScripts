@@ -1,5 +1,3 @@
--- Day 2 for testing my script
-
 local RSV1 = Instance.new("ScreenGui")
 local RenScripts = Instance.new("TextLabel")
 local UIGradient = Instance.new("UIGradient")
@@ -8,7 +6,7 @@ local MM2 = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 local CREDITS = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
-local VISUAL = Instance.new("TextButton")
+local OTHER = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local TELEPORTS = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
@@ -69,12 +67,21 @@ local CLICKTP = Instance.new("TextButton")
 local TPPLAYER = Instance.new("TextButton")
 local TextBox = Instance.new("TextBox")
 local RandomBar1 = Instance.new("TextLabel")
-local VisualFrame = Instance.new("Frame")
-local CreditsFrame = Instance.new("Frame")
+local OtherFrame = Instance.new("Frame")
+local ScrollingFrame_3 = Instance.new("ScrollingFrame")
 local TextLabel = Instance.new("TextLabel")
+local SIT = Instance.new("TextButton")
+local FLOSS = Instance.new("TextButton")
+local ZEN = Instance.new("TextButton")
+local NINJA = Instance.new("TextButton")
+local ZOMBIE = Instance.new("TextButton")
+local DAB = Instance.new("TextButton")
+local HEADLESS = Instance.new("TextButton")
+local CreditsFrame = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
 local close = Instance.new("TextButton")
 local Strip = Instance.new("TextButton")
-local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
 
 RSV1.Name = "RSV1"
@@ -131,19 +138,19 @@ CREDITS.TextStrokeColor3 = Color3.fromRGB(7, 7, 7)
 
 UICorner_2.Parent = CREDITS
 
-VISUAL.Name = "VISUAL"
-VISUAL.Parent = Main
-VISUAL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-VISUAL.BorderSizePixel = 0
-VISUAL.Position = UDim2.new(0.492309481, 6, 0.0220125783, 0)
-VISUAL.Size = UDim2.new(0, 100, 0, 29)
-VISUAL.Font = Enum.Font.GothamBold
-VISUAL.Text = "VISUAL"
-VISUAL.TextColor3 = Color3.fromRGB(0, 0, 0)
-VISUAL.TextSize = 14.000
-VISUAL.TextStrokeColor3 = Color3.fromRGB(7, 7, 7)
+OTHER.Name = "OTHER"
+OTHER.Parent = Main
+OTHER.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OTHER.BorderSizePixel = 0
+OTHER.Position = UDim2.new(0.492309481, 6, 0.0220125783, 0)
+OTHER.Size = UDim2.new(0, 100, 0, 29)
+OTHER.Font = Enum.Font.GothamBold
+OTHER.Text = "OTHER"
+OTHER.TextColor3 = Color3.fromRGB(0, 0, 0)
+OTHER.TextSize = 14.000
+OTHER.TextStrokeColor3 = Color3.fromRGB(7, 7, 7)
 
-UICorner_3.Parent = VISUAL
+UICorner_3.Parent = OTHER
 
 TELEPORTS.Name = "TELEPORTS"
 TELEPORTS.Parent = Main
@@ -164,6 +171,7 @@ mm2Frame.Parent = Main
 mm2Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 mm2Frame.Position = UDim2.new(0.0138568133, 0, 0.147798747, 0)
 mm2Frame.Size = UDim2.new(0, 419, 0, 264)
+mm2Frame.Visible = false
 
 ScrollingFrame.Parent = mm2Frame
 ScrollingFrame.Active = true
@@ -526,6 +534,7 @@ TeleportFrame.Parent = Main
 TeleportFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TeleportFrame.Position = UDim2.new(0.0138568133, 0, 0.147798747, 0)
 TeleportFrame.Size = UDim2.new(0, 419, 0, 264)
+TeleportFrame.Visible = false
 
 ScrollingFrame_2.Parent = TeleportFrame
 ScrollingFrame_2.Active = true
@@ -533,7 +542,6 @@ ScrollingFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ScrollingFrame_2.BorderSizePixel = 0
 ScrollingFrame_2.Position = UDim2.new(0.00954653975, 0, 0.0189393945, 0)
 ScrollingFrame_2.Size = UDim2.new(0, 409, 0, 255)
-ScrollingFrame_2.CanvasPosition = Vector2.new(0, 150)
 ScrollingFrame_2.ScrollBarThickness = 15
 
 TPM.Name = "TPM"
@@ -644,12 +652,102 @@ RandomBar1.Text = "By RenDev"
 RandomBar1.TextColor3 = Color3.fromRGB(255, 255, 255)
 RandomBar1.TextSize = 19.000
 
-VisualFrame.Name = "VisualFrame"
-VisualFrame.Parent = Main
-VisualFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-VisualFrame.Position = UDim2.new(0.0138568133, 0, 0.147798747, 0)
-VisualFrame.Size = UDim2.new(0, 419, 0, 264)
-VisualFrame.Visible = false
+OtherFrame.Name = "OtherFrame"
+OtherFrame.Parent = Main
+OtherFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OtherFrame.Position = UDim2.new(0.0138568133, 0, 0.147798747, 0)
+OtherFrame.Size = UDim2.new(0, 419, 0, 264)
+
+ScrollingFrame_3.Parent = OtherFrame
+ScrollingFrame_3.Active = true
+ScrollingFrame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame_3.Position = UDim2.new(0.0143198092, 0, 0.0227272734, 0)
+ScrollingFrame_3.Size = UDim2.new(0, 406, 0, 251)
+
+TextLabel.Parent = ScrollingFrame_3
+TextLabel.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+TextLabel.Size = UDim2.new(0, 393, 0, 28)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "FREE EMOTES"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+SIT.Name = "SIT"
+SIT.Parent = ScrollingFrame_3
+SIT.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+SIT.BorderSizePixel = 0
+SIT.Position = UDim2.new(0, 0, 0.0524448715, 0)
+SIT.Size = UDim2.new(0, 397, 0, 31)
+SIT.Font = Enum.Font.GothamBold
+SIT.Text = "SIT"
+SIT.TextColor3 = Color3.fromRGB(255, 255, 255)
+SIT.TextSize = 14.000
+
+FLOSS.Name = "FLOSS"
+FLOSS.Parent = ScrollingFrame_3
+FLOSS.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+FLOSS.BorderSizePixel = 0
+FLOSS.Position = UDim2.new(0, 0, 0.111156993, 0)
+FLOSS.Size = UDim2.new(0, 397, 0, 31)
+FLOSS.Font = Enum.Font.GothamBold
+FLOSS.Text = "FLOSS"
+FLOSS.TextColor3 = Color3.fromRGB(255, 255, 255)
+FLOSS.TextSize = 14.000
+
+ZEN.Name = "ZEN"
+ZEN.Parent = ScrollingFrame_3
+ZEN.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+ZEN.BorderSizePixel = 0
+ZEN.Position = UDim2.new(0, 0, 0.16986911, 0)
+ZEN.Size = UDim2.new(0, 397, 0, 31)
+ZEN.Font = Enum.Font.GothamBold
+ZEN.Text = "ZEN"
+ZEN.TextColor3 = Color3.fromRGB(255, 255, 255)
+ZEN.TextSize = 14.000
+
+NINJA.Name = "NINJA"
+NINJA.Parent = ScrollingFrame_3
+NINJA.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+NINJA.BorderSizePixel = 0
+NINJA.Position = UDim2.new(0, 0, 0.228581235, 0)
+NINJA.Size = UDim2.new(0, 397, 0, 31)
+NINJA.Font = Enum.Font.GothamBold
+NINJA.Text = "NINJA"
+NINJA.TextColor3 = Color3.fromRGB(255, 255, 255)
+NINJA.TextSize = 14.000
+
+ZOMBIE.Name = "ZOMBIE"
+ZOMBIE.Parent = ScrollingFrame_3
+ZOMBIE.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+ZOMBIE.BorderSizePixel = 0
+ZOMBIE.Position = UDim2.new(0, 0, 0.287293345, 0)
+ZOMBIE.Size = UDim2.new(0, 397, 0, 31)
+ZOMBIE.Font = Enum.Font.GothamBold
+ZOMBIE.Text = "ZOMBIE"
+ZOMBIE.TextColor3 = Color3.fromRGB(255, 255, 255)
+ZOMBIE.TextSize = 14.000
+
+DAB.Name = "DAB"
+DAB.Parent = ScrollingFrame_3
+DAB.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+DAB.BorderSizePixel = 0
+DAB.Position = UDim2.new(0, 0, 0.34600547, 0)
+DAB.Size = UDim2.new(0, 397, 0, 31)
+DAB.Font = Enum.Font.GothamBold
+DAB.Text = "DAB"
+DAB.TextColor3 = Color3.fromRGB(255, 255, 255)
+DAB.TextSize = 14.000
+
+HEADLESS.Name = "HEADLESS"
+HEADLESS.Parent = ScrollingFrame_3
+HEADLESS.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+HEADLESS.BorderSizePixel = 0
+HEADLESS.Position = UDim2.new(0, 0, 0.404717594, 0)
+HEADLESS.Size = UDim2.new(0, 397, 0, 31)
+HEADLESS.Font = Enum.Font.GothamBold
+HEADLESS.Text = "HEADLESS"
+HEADLESS.TextColor3 = Color3.fromRGB(255, 255, 255)
+HEADLESS.TextSize = 14.000
 
 CreditsFrame.Name = "CreditsFrame"
 CreditsFrame.Parent = Main
@@ -658,15 +756,15 @@ CreditsFrame.Position = UDim2.new(0.0138568133, 0, 0.147798747, 0)
 CreditsFrame.Size = UDim2.new(0, 419, 0, 264)
 CreditsFrame.Visible = false
 
-TextLabel.Parent = CreditsFrame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.255369931, 0, 0.405303031, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.GothamBlack
-TextLabel.Text = "Ty For @HardBucks for test RENSCRIPTS"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextSize = 14.000
+TextLabel_2.Parent = CreditsFrame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.255369931, 0, 0.405303031, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.GothamBlack
+TextLabel_2.Text = "Ty For @HardBucks for test RENSCRIPTS"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 14.000
 
 close.Name = "close"
 close.Parent = RenScripts
@@ -690,14 +788,14 @@ Strip.Text = "-"
 Strip.TextColor3 = Color3.fromRGB(255, 255, 255)
 Strip.TextSize = 29.000
 
-TextLabel_2.Parent = RSV1
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-TextLabel_2.Position = UDim2.new(0.426587313, 0, 0.45161289, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_2.Font = Enum.Font.GothamBold
-TextLabel_2.Text = "Please Wait..."
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 14.000
+TextLabel_3.Parent = RSV1
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+TextLabel_3.Position = UDim2.new(0.426587313, 0, 0.45161289, 0)
+TextLabel_3.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_3.Font = Enum.Font.GothamBold
+TextLabel_3.Text = "Please Wait..."
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 14.000
 
 TextButton.Parent = RSV1
 TextButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -712,7 +810,7 @@ TextButton.TextSize = 19.000
 
 -- Scripts:
 
-local function BXKVJX_fake_script() -- MM2.LocalScript 
+local function KPJME_fake_script() -- MM2.LocalScript 
 	local script = Instance.new('LocalScript', MM2)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -723,8 +821,8 @@ local function BXKVJX_fake_script() -- MM2.LocalScript
 	end)
 	
 end
-coroutine.wrap(BXKVJX_fake_script)()
-local function SNOC_fake_script() -- CREDITS.LocalScript 
+coroutine.wrap(KPJME_fake_script)()
+local function JGQVV_fake_script() -- CREDITS.LocalScript 
 	local script = Instance.new('LocalScript', CREDITS)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -735,9 +833,9 @@ local function SNOC_fake_script() -- CREDITS.LocalScript
 	end)
 	
 end
-coroutine.wrap(SNOC_fake_script)()
-local function SDFU_fake_script() -- VISUAL.LocalScript 
-	local script = Instance.new('LocalScript', VISUAL)
+coroutine.wrap(JGQVV_fake_script)()
+local function UMOFK_fake_script() -- OTHER.LocalScript 
+	local script = Instance.new('LocalScript', OTHER)
 
 	script.Parent.MouseButton1Down:Connect(function()
 		script.Parent.Parent.mm2Frame.Visible = false
@@ -747,8 +845,8 @@ local function SDFU_fake_script() -- VISUAL.LocalScript
 	end)
 	
 end
-coroutine.wrap(SDFU_fake_script)()
-local function LJWGI_fake_script() -- TELEPORTS.LocalScript 
+coroutine.wrap(UMOFK_fake_script)()
+local function QVINBLY_fake_script() -- TELEPORTS.LocalScript 
 	local script = Instance.new('LocalScript', TELEPORTS)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -759,8 +857,8 @@ local function LJWGI_fake_script() -- TELEPORTS.LocalScript
 	end)
 	
 end
-coroutine.wrap(LJWGI_fake_script)()
-local function IXSHC_fake_script() -- ESPM.LocalScript 
+coroutine.wrap(QVINBLY_fake_script)()
+local function SXCVKNG_fake_script() -- ESPM.LocalScript 
 	local script = Instance.new('LocalScript', ESPM)
 
 	local v = false
@@ -776,8 +874,8 @@ local function IXSHC_fake_script() -- ESPM.LocalScript
 	end)
 	
 end
-coroutine.wrap(IXSHC_fake_script)()
-local function QTRTYUU_fake_script() -- ESPBS.LocalScript 
+coroutine.wrap(SXCVKNG_fake_script)()
+local function EEBMKJ_fake_script() -- ESPBS.LocalScript 
 	local script = Instance.new('LocalScript', ESPBS)
 
 	local v = false
@@ -792,8 +890,8 @@ local function QTRTYUU_fake_script() -- ESPBS.LocalScript
 	end)
 	
 end
-coroutine.wrap(QTRTYUU_fake_script)()
-local function OVNQJ_fake_script() -- AIMBU.LocalScript 
+coroutine.wrap(EEBMKJ_fake_script)()
+local function GSEEJD_fake_script() -- AIMBU.LocalScript 
 	local script = Instance.new('LocalScript', AIMBU)
 
 	local v = false
@@ -808,8 +906,8 @@ local function OVNQJ_fake_script() -- AIMBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(OVNQJ_fake_script)()
-local function CCDAYQ_fake_script() -- COINSBU.LocalScript 
+coroutine.wrap(GSEEJD_fake_script)()
+local function RXJAKKP_fake_script() -- COINSBU.LocalScript 
 	local script = Instance.new('LocalScript', COINSBU)
 
 	local v = false
@@ -824,8 +922,8 @@ local function CCDAYQ_fake_script() -- COINSBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(CCDAYQ_fake_script)()
-local function MNVZGVR_fake_script() -- SILENTBU.LocalScript 
+coroutine.wrap(RXJAKKP_fake_script)()
+local function BXSBAIS_fake_script() -- SILENTBU.LocalScript 
 	local script = Instance.new('LocalScript', SILENTBU)
 
 	local v = false
@@ -840,8 +938,8 @@ local function MNVZGVR_fake_script() -- SILENTBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(MNVZGVR_fake_script)()
-local function DBNQXDM_fake_script() -- GRABGUNBU.LocalScript 
+coroutine.wrap(BXSBAIS_fake_script)()
+local function LREH_fake_script() -- GRABGUNBU.LocalScript 
 	local script = Instance.new('LocalScript', GRABGUNBU)
 
 	local v = false
@@ -856,8 +954,8 @@ local function DBNQXDM_fake_script() -- GRABGUNBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(DBNQXDM_fake_script)()
-local function XLHO_fake_script() -- ALLCHAMSBU.LocalScript 
+coroutine.wrap(LREH_fake_script)()
+local function MMUG_fake_script() -- ALLCHAMSBU.LocalScript 
 	local script = Instance.new('LocalScript', ALLCHAMSBU)
 
 	local v = false
@@ -872,8 +970,8 @@ local function XLHO_fake_script() -- ALLCHAMSBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(XLHO_fake_script)()
-local function CZFDB_fake_script() -- SPEEDBU.LocalScript 
+coroutine.wrap(MMUG_fake_script)()
+local function YQWPRW_fake_script() -- SPEEDBU.LocalScript 
 	local script = Instance.new('LocalScript', SPEEDBU)
 
 	local v = false
@@ -888,8 +986,8 @@ local function CZFDB_fake_script() -- SPEEDBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(CZFDB_fake_script)()
-local function OEJJ_fake_script() -- FLUBU.LocalScript 
+coroutine.wrap(YQWPRW_fake_script)()
+local function ZOSJI_fake_script() -- FLUBU.LocalScript 
 	local script = Instance.new('LocalScript', FLUBU)
 
 	local v = false
@@ -904,8 +1002,8 @@ local function OEJJ_fake_script() -- FLUBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(OEJJ_fake_script)()
-local function AQJIXNI_fake_script() -- NOCLIPBU.LocalScript 
+coroutine.wrap(ZOSJI_fake_script)()
+local function KJRWYNO_fake_script() -- NOCLIPBU.LocalScript 
 	local script = Instance.new('LocalScript', NOCLIPBU)
 
 	local v = false
@@ -920,8 +1018,8 @@ local function AQJIXNI_fake_script() -- NOCLIPBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(AQJIXNI_fake_script)()
-local function KAJT_fake_script() -- GODMODEBU.LocalScript 
+coroutine.wrap(KJRWYNO_fake_script)()
+local function IBDSU_fake_script() -- GODMODEBU.LocalScript 
 	local script = Instance.new('LocalScript', GODMODEBU)
 
 	local v = false
@@ -936,8 +1034,8 @@ local function KAJT_fake_script() -- GODMODEBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(KAJT_fake_script)()
-local function KFKQB_fake_script() -- ALLESPBU.LocalScript 
+coroutine.wrap(IBDSU_fake_script)()
+local function WPVDVT_fake_script() -- ALLESPBU.LocalScript 
 	local script = Instance.new('LocalScript', ALLESPBU)
 
 	local v = false
@@ -952,8 +1050,8 @@ local function KFKQB_fake_script() -- ALLESPBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(KFKQB_fake_script)()
-local function NTJZ_fake_script() -- FLINGBU.LocalScript 
+coroutine.wrap(WPVDVT_fake_script)()
+local function TWCH_fake_script() -- FLINGBU.LocalScript 
 	local script = Instance.new('LocalScript', FLINGBU)
 
 	local v = false
@@ -968,8 +1066,8 @@ local function NTJZ_fake_script() -- FLINGBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(NTJZ_fake_script)()
-local function RYYIIZC_fake_script() -- KILLALL_2.LocalScript 
+coroutine.wrap(TWCH_fake_script)()
+local function JQBQOIL_fake_script() -- KILLALL_2.LocalScript 
 	local script = Instance.new('LocalScript', KILLALL_2)
 
 	local v = false
@@ -984,8 +1082,8 @@ local function RYYIIZC_fake_script() -- KILLALL_2.LocalScript
 	end)
 	
 end
-coroutine.wrap(RYYIIZC_fake_script)()
-local function LNFJM_fake_script() -- RandomBar.LocalScript 
+coroutine.wrap(JQBQOIL_fake_script)()
+local function VNIN_fake_script() -- RandomBar.LocalScript 
 	local script = Instance.new('LocalScript', RandomBar)
 
 	local text = script.Parent
@@ -1043,8 +1141,8 @@ local function LNFJM_fake_script() -- RandomBar.LocalScript
 	
 	
 end
-coroutine.wrap(LNFJM_fake_script)()
-local function CSQLIK_fake_script() -- RandomBar1.LocalScript 
+coroutine.wrap(VNIN_fake_script)()
+local function YWKJCBN_fake_script() -- RandomBar1.LocalScript 
 	local script = Instance.new('LocalScript', RandomBar1)
 
 	local text = script.Parent
@@ -1102,8 +1200,103 @@ local function CSQLIK_fake_script() -- RandomBar1.LocalScript
 	
 	
 end
-coroutine.wrap(CSQLIK_fake_script)()
-local function MYLB_fake_script() -- close.LocalScript 
+coroutine.wrap(YWKJCBN_fake_script)()
+local function ETIKAIS_fake_script() -- SIT.LocalScript 
+	local script = Instance.new('LocalScript', SIT)
+
+	local Sit = script.Parent
+	
+	Sit.MouseButton1Click:Connect(function()
+		local string_1 = "sit";
+		local Target = game:GetService("ReplicatedStorage").PlayEmote;
+		Target:Fire(string_1);
+	end)
+	
+	
+end
+coroutine.wrap(ETIKAIS_fake_script)()
+local function URTS_fake_script() -- FLOSS.LocalScript 
+	local script = Instance.new('LocalScript', FLOSS)
+
+	local Floss = script.Parent
+	
+	Floss.MouseButton1Click:Connect(function()
+		local string_1 = "floss";
+		local Target = game:GetService("ReplicatedStorage").PlayEmote;
+		Target:Fire(string_1);
+	end)
+	
+	
+	
+end
+coroutine.wrap(URTS_fake_script)()
+local function XYBN_fake_script() -- ZEN.LocalScript 
+	local script = Instance.new('LocalScript', ZEN)
+
+	local Zen = script.Parent
+	
+	Zen.MouseButton1Click:Connect(function()
+		local string_1 = "zen";
+		local Target = game:GetService("ReplicatedStorage").PlayEmote;
+		Target:Fire(string_1);
+	end)
+	
+	
+end
+coroutine.wrap(XYBN_fake_script)()
+local function ZMNBGKR_fake_script() -- NINJA.LocalScript 
+	local script = Instance.new('LocalScript', NINJA)
+
+	local Ninja = script.Parent
+	
+	Ninja.MouseButton1Click:Connect(function()
+		local string_1 = "ninja";
+		local Target = game:GetService("ReplicatedStorage").PlayEmote;
+		Target:Fire(string_1);
+	end)
+	
+	
+end
+coroutine.wrap(ZMNBGKR_fake_script)()
+local function FOMLO_fake_script() -- ZOMBIE.LocalScript 
+	local script = Instance.new('LocalScript', ZOMBIE)
+
+	local Zombie = script.Parent
+	
+	Zombie.MouseButton1Click:Connect(function()
+		local string_1 = "zombie";
+		local Target = game:GetService("ReplicatedStorage").PlayEmote;
+		Target:Fire(string_1);
+	end)
+	
+end
+coroutine.wrap(FOMLO_fake_script)()
+local function PCWPKB_fake_script() -- DAB.Script 
+	local script = Instance.new('Script', DAB)
+
+	local Dab = script.Parent
+	
+	Dab.MouseButton1Click:Connect(function()
+		local string_1 = "dab";
+		local Target = game:GetService("ReplicatedStorage").PlayEmote;
+		Target:Fire(string_1);
+	end)
+end
+coroutine.wrap(PCWPKB_fake_script)()
+local function DRKJT_fake_script() -- HEADLESS.Script 
+	local script = Instance.new('Script', HEADLESS)
+
+	local Headless = script.Parent
+	
+	Headless.MouseButton1Click:Connect(function()
+		local string_1 = "headless";
+		local Target = game:GetService("ReplicatedStorage").PlayEmote;
+		Target:Fire(string_1);
+	end)
+	
+end
+coroutine.wrap(DRKJT_fake_script)()
+local function TQFSYPJ_fake_script() -- close.LocalScript 
 	local script = Instance.new('LocalScript', close)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1111,8 +1304,8 @@ local function MYLB_fake_script() -- close.LocalScript
 	end)
 	
 end
-coroutine.wrap(MYLB_fake_script)()
-local function WPRV_fake_script() -- Strip.LocalScript 
+coroutine.wrap(TQFSYPJ_fake_script)()
+local function SXKHR_fake_script() -- Strip.LocalScript 
 	local script = Instance.new('LocalScript', Strip)
 
 	local v = false
@@ -1128,17 +1321,17 @@ local function WPRV_fake_script() -- Strip.LocalScript
 	end)
 	
 end
-coroutine.wrap(WPRV_fake_script)()
-local function FRWLZD_fake_script() -- RenScripts.DraggableSystem 
+coroutine.wrap(SXKHR_fake_script)()
+local function BVND_fake_script() -- RenScripts.DraggableSystem 
 	local script = Instance.new('LocalScript', RenScripts)
 
 	script.Parent.Active = true
 	script.Parent.Draggable = true
 	
 end
-coroutine.wrap(FRWLZD_fake_script)()
-local function ITPOEAQ_fake_script() -- TextLabel_2.LocalScript 
-	local script = Instance.new('LocalScript', TextLabel_2)
+coroutine.wrap(BVND_fake_script)()
+local function NSDQIA_fake_script() -- TextLabel_3.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_3)
 
 	wait(1)
 	script.Parent.Text = "Please Wait."
@@ -1169,8 +1362,8 @@ local function ITPOEAQ_fake_script() -- TextLabel_2.LocalScript
 	script.Parent.Parent.TextButton.Visible = true
 	
 end
-coroutine.wrap(ITPOEAQ_fake_script)()
-local function IJPKJO_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(NSDQIA_fake_script)()
+local function JIUQ_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local text = script.Parent
@@ -1231,4 +1424,4 @@ local function IJPKJO_fake_script() -- TextButton.LocalScript
 	end
 	
 end
-coroutine.wrap(IJPKJO_fake_script)()
+coroutine.wrap(JIUQ_fake_script)()
