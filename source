@@ -84,8 +84,6 @@ local Strip = Instance.new("TextButton")
 local TextLabel_3 = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
 
---Properties:
-
 RSV1.Name = "RSV1"
 RSV1.Parent = game.CoreGui
 RSV1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -798,6 +796,8 @@ Strip.TextSize = 29.000
 
 TextLabel_3.Parent = RSV1
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+TextLabel_3.BorderColor3 = Color3.fromRGB(53, 53, 53)
+TextLabel_3.BorderSizePixel = 3
 TextLabel_3.Position = UDim2.new(0.426587313, 0, 0.45161289, 0)
 TextLabel_3.Size = UDim2.new(0, 200, 0, 50)
 TextLabel_3.Font = Enum.Font.GothamBold
@@ -807,7 +807,8 @@ TextLabel_3.TextSize = 14.000
 
 TextButton.Parent = RSV1
 TextButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-TextButton.BorderSizePixel = 0
+TextButton.BorderColor3 = Color3.fromRGB(53, 53, 53)
+TextButton.BorderSizePixel = 3
 TextButton.Position = UDim2.new(0.426793545, 0, 0.409867167, 0)
 TextButton.Size = UDim2.new(0, 200, 0, 102)
 TextButton.Visible = false
@@ -818,7 +819,7 @@ TextButton.TextSize = 19.000
 
 -- Scripts:
 
-local function WPWLL_fake_script() -- MM2.LocalScript 
+local function WIETX_fake_script() -- MM2.LocalScript 
 	local script = Instance.new('LocalScript', MM2)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -829,8 +830,8 @@ local function WPWLL_fake_script() -- MM2.LocalScript
 	end)
 	
 end
-coroutine.wrap(WPWLL_fake_script)()
-local function FJPW_fake_script() -- CREDITS.LocalScript 
+coroutine.wrap(WIETX_fake_script)()
+local function ZMTJM_fake_script() -- CREDITS.LocalScript 
 	local script = Instance.new('LocalScript', CREDITS)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -841,8 +842,8 @@ local function FJPW_fake_script() -- CREDITS.LocalScript
 	end)
 	
 end
-coroutine.wrap(FJPW_fake_script)()
-local function YOFCJ_fake_script() -- OTHER.LocalScript 
+coroutine.wrap(ZMTJM_fake_script)()
+local function YMIOS_fake_script() -- OTHER.LocalScript 
 	local script = Instance.new('LocalScript', OTHER)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -853,8 +854,8 @@ local function YOFCJ_fake_script() -- OTHER.LocalScript
 	end)
 	
 end
-coroutine.wrap(YOFCJ_fake_script)()
-local function BOSYT_fake_script() -- TELEPORTS.LocalScript 
+coroutine.wrap(YMIOS_fake_script)()
+local function IZECNY_fake_script() -- TELEPORTS.LocalScript 
 	local script = Instance.new('LocalScript', TELEPORTS)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -865,263 +866,81 @@ local function BOSYT_fake_script() -- TELEPORTS.LocalScript
 	end)
 	
 end
-coroutine.wrap(BOSYT_fake_script)()
-local function CASW_fake_script() -- ESPM.LocalScript 
+coroutine.wrap(IZECNY_fake_script)()
+local function GJWFD_fake_script() -- ESPM.LocalScript 
 	local script = Instance.new('LocalScript', ESPM)
 
 	local v = false
-	local player = game.Players.LocalPlayer
-	local printvar = true
-	local espnames = true
-	local murderer = "None"
-	
-	function Create(base, team, colors1, colors2, colors3, teamname) --For all esps
-		local bb = Instance.new("BillboardGui",player.PlayerGui)
-		bb.Adornee = base
-		bb.ExtentsOffset = Vector3.new(0,1,0)
-		bb.AlwaysOnTop = true
-		bb.Size = UDim2.new(0,5,0,5)
-		bb.StudsOffset = Vector3.new(0,1,0)
-		bb.Name = "tracker"
-		local frame = Instance.new("Frame",bb)
-		frame.ZIndex = 10
-		frame.BackgroundTransparency = 0.3
-		frame.Size = UDim2.new(1,0,1,0)
-		local txtlbl = Instance.new("TextLabel",bb)
-		txtlbl.ZIndex = 10
-		txtlbl.Text = teamname
-		txtlbl.BackgroundTransparency = 1
-		txtlbl.Position = UDim2.new(0,0,0,-35)
-		txtlbl.Size = UDim2.new(1,0,10,0)
-		txtlbl.Font = "GothamBold"
-		txtlbl.FontSize = "Size12"
-		txtlbl.TextStrokeTransparency = 0.5
-		if team then --For teams, left over from origianl but never removed
-			txtlbl.TextColor3 = Color3.new(0,0,255)
-			frame.BackgroundColor3 = Color3.new(0,0,255)
-		else
-			txtlbl.TextColor3 = Color3.new(colors1,colors2,colors3)
-			frame.BackgroundColor3 = Color3.new(colors1,colors2,colors3)
-		end
-	end
-	
-	function findmurderer() --Find who the murderer is
-		local colors1 = 255
-		local colors2 = 0
-		local colors3 = 0
-		for i, v in pairs(game:GetService("Players"):GetChildren()) do
-			if v ~= game:GetService("Players").LocalPlayer then
-				for i,v in pairs(v.Backpack:GetChildren()) do --Checks backpack for knife
-					if v.Name == "Knife" then
-						if espnames == true then
-							local teamname = v.Parent.Parent.Name
-							if v.Parent.Parent.Character.Head ~= nil then
-								Create(v.Parent.Parent.Character.Head, false, colors1 ,colors2, colors3, teamname)
-							else
-								if printvar == true then
-									print("Head missing from murderer!")
-								end
-							end
-						elseif espnames == false then
-							local teamname = "Murderer"
-							if v.Parent.Parent.Character.Head ~= nil then
-								Create(v.Parent.Parent.Character.Head, false, colors1 ,colors2, colors3, teamname)
-							else
-								if printvar == true then
-									print("Head missing from murderer!")
-								end
-							end
-						end
-						murderer = v.Parent.Parent.Name
-						if printvar == true then
-							print(murderer.." is Murderer")
-						end
-					end
-				end
-				for i,v in pairs(v.Character:GetChildren()) do --Checks workspace player for knife (holding it)
-					if v.Name == "Knife" then
-						if espnames == true then
-							local teamname = v.Parent.Name
-							if v.Parent.Head ~= nil then --Tried to failproof to stop printing nil
-								Create(v.Parent.Head, false, colors1 ,colors2, colors3, teamname)
-							else
-								if printvar == true then
-									print("Head missing from murderer!")
-								end
-							end
-						elseif espnames == false then
-							local teamname = "Murderer"
-							if v.Parent.Head ~= nil then
-								Create(v.Parent.Head, false, colors1 ,colors2, colors3, teamname)
-							else
-								if printvar == true then
-									print("Head missing from murderer!")
-								end
-							end
-						end
-						murderer = v.Parent.Name
-						if printvar == true then --Tried to failproof to stop printing nil
-							local murderer1 = tostring(v.Parent.Name)
-							print(murderer1.." is Murderer")
-						end
-					end
-				end
-			end
-		end
-	end
-	
-	function Clear() --Clears all the esps
-		for _,v in pairs(player.PlayerGui:children()) do
-			if v.Name == "tracker" and v:isA("BillboardGui") then
-				v:Destroy()
-			end
-		end
-	end
 	
 	script.Parent.MouseButton1Down:Connect(function()
 		if v == false then
 			v = true
 			script.Parent.BackgroundColor3 = Color3.fromRGB(55, 255, 0)
-			findmurderer()
+			for i, v in pairs(game.Players:children()) do
+				if v.Backpack:FindFirstChild("Knife") or v.Character:FindFirstChild("Knife") then
+					local esp = Instance.new("BoxHandleAdornment")
+					esp.Parent = v.Character.Head
+					esp.Size = Vector3.new(1,1,1)
+					esp.Color3 = Color3.new(255, 0, 0)
+					esp.AlwaysOnTop = true
+					esp.Adornee = v.Character.Head
+					esp.Visible = true
+					esp.ZIndex = 2
+				end
+			end
+	
 		else 
 			v = false
 			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
-			Clear()
-		
+			for i, v in pairs(game.Players:children()) do
+				for i, a in pairs(v.Character.Head:children()) do
+					if a.ClassName == "BoxHandleAdornment" then
+						a:remove()
+					end
+				end
+			end
 		end
 	end)
 	
 end
-coroutine.wrap(CASW_fake_script)()
-local function GIBP_fake_script() -- ESPBS.LocalScript 
+coroutine.wrap(GJWFD_fake_script)()
+local function AUGDNWN_fake_script() -- ESPBS.LocalScript 
 	local script = Instance.new('LocalScript', ESPBS)
 
 	local v = false
-	local player = game.Players.LocalPlayer
-	local printvar = true
-	local espnames = true
-	local sheriff = "None"
-	
-	function Create(base, team, colors1, colors2, colors3, teamname) --For all esps
-		local bb = Instance.new("BillboardGui",player.PlayerGui)
-		bb.Adornee = base
-		bb.ExtentsOffset = Vector3.new(0,1,0)
-		bb.AlwaysOnTop = true
-		bb.Size = UDim2.new(0,5,0,5)
-		bb.StudsOffset = Vector3.new(0,1,0)
-		bb.Name = "tracker"
-		local frame = Instance.new("Frame",bb)
-		frame.ZIndex = 10
-		frame.BackgroundTransparency = 0.3
-		frame.Size = UDim2.new(1,0,1,0)
-		local txtlbl = Instance.new("TextLabel",bb)
-		txtlbl.ZIndex = 10
-		txtlbl.Text = teamname
-		txtlbl.BackgroundTransparency = 1
-		txtlbl.Position = UDim2.new(0,0,0,-35)
-		txtlbl.Size = UDim2.new(1,0,10,0)
-		txtlbl.Font = "ArialBold"
-		txtlbl.FontSize = "Size12"
-		txtlbl.TextStrokeTransparency = 0.5
-		if team then --For teams, left over from origianl but never removed
-			txtlbl.TextColor3 = Color3.new(0,0,255)
-			frame.BackgroundColor3 = Color3.new(0,0,255)
-		else
-			txtlbl.TextColor3 = Color3.new(colors1,colors2,colors3)
-			frame.BackgroundColor3 = Color3.new(colors1,colors2,colors3)
-		end
-	end
-	
-	function findsheriff() --Find who the sheriff is
-		local colors1 = 0
-		local colors2 = 0
-		local colors3 = 255
-		for i, v in pairs(game:GetService("Players"):GetChildren()) do
-			if v ~= game:GetService("Players").LocalPlayer then
-				for i,v in pairs(v.Backpack:GetChildren()) do
-					if v.Name == "Revolver" or v.Name == "Gun" then --Lazy to check if its revolver or gun and checks backpack for gun
-						if espnames == true then
-							local teamname = v.Parent.Parent.Name
-							if v.Parent.Parent.Character.Head ~= nil then --Tried to failproof to stop printing nil
-								Create(v.Parent.Parent.Character.Head, false, colors1 ,colors2, colors3, teamname)
-							else
-								if printvar == true then
-									print("Head missing from sheriff!")
-								end
-							end
-						elseif espnames == false then
-							local teamname = "Sheriff"
-							if v.Parent.Parent.Character.Head ~= nil then --Tried to failproof to stop printing nil
-								Create(v.Parent.Parent.Character.Head, false, colors1 ,colors2, colors3, teamname)
-							else
-								if printvar == true then
-									print("Head missing from sheriff!")
-								end
-							end
-						end
-						sheriff = v.Parent.Parent.Name
-						if printvar == true then
-							local sheriff1 = tostring(v.Parent.Parent.Name)
-							print(sheriff1.." is Sheriff")
-						end
-					end
-				end
-				for i,v in pairs(v.Character:GetChildren()) do
-					if v.Name == "Revolver" or v.Name == "Gun" then --Lazy to check if its revolver or gun and checks workspace player for gun (holding it)
-						if espnames == true then
-							local teamname = v.Parent.Name
-							if v.Parent.Head ~= nil then --Tried to failproof to stop printing nil
-								Create(v.Parent.Head, false, colors1 ,colors2, colors3, teamname)
-							else
-								if printvar == true then
-									print("Head missing from sheriff!")
-								end
-							end
-						elseif espnames == false then
-							local teamname = "Sheriff"
-							if v.Parent.Head ~= nil then --Tried to failproof to stop printing nil
-								Create(v.Parent.Head, false, colors1 ,colors2, colors3, teamname)
-							else
-								if printvar == true then
-									print("Head missing from sheriff!")
-								end
-							end
-						end
-						sheriff = v.Parent.Name
-						if printvar == true then
-							local sheriff1 = tostring(v.Parent.Name)
-							print(sheriff1.." is Sheriff")
-						end
-					end
-				end
-			end
-		end
-	end
-	
-	function Clear() --Clears all the esps
-		for _,v in pairs(player.PlayerGui:children()) do
-			if v.Name == "tracker" and v:isA("BillboardGui") then
-				v:Destroy()
-			end
-		end
-	end
 	
 	script.Parent.MouseButton1Down:Connect(function()
 		if v == false then
 			v = true
 			script.Parent.BackgroundColor3 = Color3.fromRGB(55, 255, 0)
-			findsheriff()
+			for i, v in pairs(game.Players:children()) do
+				if v.Backpack:FindFirstChild("Gun") or v.Character:FindFirstChild("Gun") then
+					local esp = Instance.new("BoxHandleAdornment")
+					esp.Parent = v.Character.Head
+					esp.Size = Vector3.new(1,1,1)
+					esp.Color3 = Color3.new(0, 0, 255)
+					esp.AlwaysOnTop = true
+					esp.Adornee = v.Character.Head
+					esp.Visible = true
+					esp.ZIndex = 2
+				end
+			end
 		else 
 			v = false
 			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
-			Clear()
-			
+			for i, v in pairs(game.Players:children()) do
+				for i, a in pairs(v.Character.Head:children()) do
+					if a.ClassName == "BoxHandleAdornment" then
+						a:remove()
+					end
+				end
+			end
 		end
 	end)
 	
 end
-coroutine.wrap(GIBP_fake_script)()
-local function ZOGR_fake_script() -- AIMBU.LocalScript 
+coroutine.wrap(AUGDNWN_fake_script)()
+local function JOPOYBO_fake_script() -- AIMBU.LocalScript 
 	local script = Instance.new('LocalScript', AIMBU)
 
 	local v = false
@@ -1136,29 +955,16 @@ local function ZOGR_fake_script() -- AIMBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(ZOGR_fake_script)()
-local function JHAEA_fake_script() -- COINSBU.LocalScript 
+coroutine.wrap(JOPOYBO_fake_script)()
+local function FAKJAP_fake_script() -- COINSBU.LocalScript 
 	local script = Instance.new('LocalScript', COINSBU)
 
 	local v = false
 	
-	function coingrabberfunc() --Coin grabber function
-		local children = game.Workspace:GetChildren()
-		for _, child in pairs(children) do
-			for _, child in pairs(child:GetChildren()) do
-				table.insert(children, child)
-			end
-			if child:IsA("BasePart") and child.Name == "Coin" then
-				child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-			end
-		end
-	end
-	
 	script.Parent.MouseButton1Down:Connect(function()
 		if v == false then
 			v = true
 			script.Parent.BackgroundColor3 = Color3.fromRGB(55, 255, 0)
-			coingrabberfunc()
 		else 
 			v = false
 			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
@@ -1166,44 +972,25 @@ local function JHAEA_fake_script() -- COINSBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(JHAEA_fake_script)()
-local function IJOQ_fake_script() -- XRAYBU.LocalScript 
+coroutine.wrap(FAKJAP_fake_script)()
+local function EVVP_fake_script() -- XRAYBU.LocalScript 
 	local script = Instance.new('LocalScript', XRAYBU)
 
 	local v = false
 	
-	function XrayOn(obj) --Enables xray
-		for _,v in pairs(obj:GetChildren()) do 
-			if (v:IsA("BasePart")) and not v.Parent:FindFirstChild("Humanoid") then
-				v.LocalTransparencyModifier = 0.75
-			end
-			XrayOn(v) 
-		end
-	end 
-	
-	function XrayOff(obj) --Disables xray
-		for _,v in pairs(obj:GetChildren()) do
-			if (v:IsA("BasePart")) and not v.Parent:FindFirstChild("Humanoid") then
-				v.LocalTransparencyModifier = 0
-			end XrayOff(v)
-		end
-	end
-	
 	script.Parent.MouseButton1Down:Connect(function()
 		if v == false then
 			v = true
 			script.Parent.BackgroundColor3 = Color3.fromRGB(55, 255, 0)
-			XrayOn()
 		else 
 			v = false
 			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
-			XrayOff()
 		end
 	end)
 	
 end
-coroutine.wrap(IJOQ_fake_script)()
-local function RDYRHWQ_fake_script() -- GRABGUNBU.LocalScript 
+coroutine.wrap(EVVP_fake_script)()
+local function XYJZIJX_fake_script() -- GRABGUNBU.LocalScript 
 	local script = Instance.new('LocalScript', GRABGUNBU)
 
 	local v = false
@@ -1218,8 +1005,8 @@ local function RDYRHWQ_fake_script() -- GRABGUNBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(RDYRHWQ_fake_script)()
-local function IGOW_fake_script() -- ALLCHAMSBU.LocalScript 
+coroutine.wrap(XYJZIJX_fake_script)()
+local function OXEZM_fake_script() -- ALLCHAMSBU.LocalScript 
 	local script = Instance.new('LocalScript', ALLCHAMSBU)
 
 	local v = false
@@ -1234,8 +1021,8 @@ local function IGOW_fake_script() -- ALLCHAMSBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(IGOW_fake_script)()
-local function VEEY_fake_script() -- SPEEDBU.LocalScript 
+coroutine.wrap(OXEZM_fake_script)()
+local function APTAFOF_fake_script() -- SPEEDBU.LocalScript 
 	local script = Instance.new('LocalScript', SPEEDBU)
 
 	local v = false
@@ -1250,8 +1037,8 @@ local function VEEY_fake_script() -- SPEEDBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(VEEY_fake_script)()
-local function WTTYBW_fake_script() -- FLUBU.LocalScript 
+coroutine.wrap(APTAFOF_fake_script)()
+local function OACSKXI_fake_script() -- FLUBU.LocalScript 
 	local script = Instance.new('LocalScript', FLUBU)
 
 	local v = false
@@ -1266,8 +1053,8 @@ local function WTTYBW_fake_script() -- FLUBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(WTTYBW_fake_script)()
-local function MUDXQJ_fake_script() -- NOCLIPBU.LocalScript 
+coroutine.wrap(OACSKXI_fake_script)()
+local function LVIP_fake_script() -- NOCLIPBU.LocalScript 
 	local script = Instance.new('LocalScript', NOCLIPBU)
 
 	local v = false
@@ -1282,8 +1069,8 @@ local function MUDXQJ_fake_script() -- NOCLIPBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(MUDXQJ_fake_script)()
-local function JTHFYU_fake_script() -- GODMODEBU.LocalScript 
+coroutine.wrap(LVIP_fake_script)()
+local function MBSF_fake_script() -- GODMODEBU.LocalScript 
 	local script = Instance.new('LocalScript', GODMODEBU)
 
 	local v = false
@@ -1316,24 +1103,63 @@ local function JTHFYU_fake_script() -- GODMODEBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(JTHFYU_fake_script)()
-local function WTKCPFG_fake_script() -- ALLESPBU.LocalScript 
+coroutine.wrap(MBSF_fake_script)()
+local function BOOQPS_fake_script() -- ALLESPBU.LocalScript 
 	local script = Instance.new('LocalScript', ALLESPBU)
 
 	local v = false
+	
 	script.Parent.MouseButton1Down:Connect(function()
 		if v == false then
 			v = true
 			script.Parent.BackgroundColor3 = Color3.fromRGB(55, 255, 0)
+			for i, v in pairs(game.Players:children()) do
+				if v.Backpack:FindFirstChild("Knife") or v.Character:FindFirstChild("Knife") then
+					local esp = Instance.new("BoxHandleAdornment")
+					esp.Parent = v.Character.Head
+					esp.Size = Vector3.new(1,1,1)
+					esp.Color3 = Color3.new(255, 0, 0)
+					esp.AlwaysOnTop = true
+					esp.Adornee = v.Character.Head
+					esp.Visible = true
+					esp.ZIndex = 2
+	
+				elseif v.Backpack:FindFirstChild("Gun") or v.Character:FindFirstChild("Gun") then
+					local esp = Instance.new("BoxHandleAdornment")
+					esp.Parent = v.Character.Head
+					esp.Size = Vector3.new(1,1,1)
+					esp.Color3 = Color3.new(0, 0, 255)
+					esp.AlwaysOnTop = true
+					esp.Adornee = v.Character.Head
+					esp.Visible = true
+					esp.ZIndex = 2
+				else
+					local esp = Instance.new("BoxHandleAdornment")
+					esp.Parent = v.Character.Head
+					esp.Size = Vector3.new(1,1,1)
+					esp.Color3 = Color3.new(0, 255, 0)
+					esp.AlwaysOnTop = true
+					esp.Adornee = v.Character.Head
+					esp.Visible = true
+					esp.ZIndex = 2
+				end
+			end
 		else 
 			v = false
 			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+			for i, v in pairs(game.Players:children()) do
+				for i, a in pairs(v.Character.Head:children()) do
+					if a.ClassName == "BoxHandleAdornment" then
+						a:remove()
+					end
+				end
+			end
 		end
 	end)
 	
 end
-coroutine.wrap(WTKCPFG_fake_script)()
-local function NDYM_fake_script() -- FLINGBU.LocalScript 
+coroutine.wrap(BOOQPS_fake_script)()
+local function JLNT_fake_script() -- FLINGBU.LocalScript 
 	local script = Instance.new('LocalScript', FLINGBU)
 
 	local v = false
@@ -1348,8 +1174,8 @@ local function NDYM_fake_script() -- FLINGBU.LocalScript
 	end)
 	
 end
-coroutine.wrap(NDYM_fake_script)()
-local function KGKOH_fake_script() -- KILLALL_2.LocalScript 
+coroutine.wrap(JLNT_fake_script)()
+local function GAOEZ_fake_script() -- KILLALL_2.LocalScript 
 	local script = Instance.new('LocalScript', KILLALL_2)
 
 	local v = false
@@ -1364,8 +1190,8 @@ local function KGKOH_fake_script() -- KILLALL_2.LocalScript
 	end)
 	
 end
-coroutine.wrap(KGKOH_fake_script)()
-local function LCVGJVK_fake_script() -- RandomBar.LocalScript 
+coroutine.wrap(GAOEZ_fake_script)()
+local function RZGCJEB_fake_script() -- RandomBar.LocalScript 
 	local script = Instance.new('LocalScript', RandomBar)
 
 	local text = script.Parent
@@ -1423,8 +1249,8 @@ local function LCVGJVK_fake_script() -- RandomBar.LocalScript
 	
 	
 end
-coroutine.wrap(LCVGJVK_fake_script)()
-local function RZXKUO_fake_script() -- RandomBar1.LocalScript 
+coroutine.wrap(RZGCJEB_fake_script)()
+local function BNCSKO_fake_script() -- RandomBar1.LocalScript 
 	local script = Instance.new('LocalScript', RandomBar1)
 
 	local text = script.Parent
@@ -1482,8 +1308,8 @@ local function RZXKUO_fake_script() -- RandomBar1.LocalScript
 	
 	
 end
-coroutine.wrap(RZXKUO_fake_script)()
-local function XHEX_fake_script() -- SIT.LocalScript 
+coroutine.wrap(BNCSKO_fake_script)()
+local function BRLQ_fake_script() -- SIT.LocalScript 
 	local script = Instance.new('LocalScript', SIT)
 
 	local Sit = script.Parent
@@ -1496,8 +1322,8 @@ local function XHEX_fake_script() -- SIT.LocalScript
 	
 	
 end
-coroutine.wrap(XHEX_fake_script)()
-local function YMCRE_fake_script() -- FLOSS.LocalScript 
+coroutine.wrap(BRLQ_fake_script)()
+local function VRIK_fake_script() -- FLOSS.LocalScript 
 	local script = Instance.new('LocalScript', FLOSS)
 
 	local Floss = script.Parent
@@ -1511,8 +1337,8 @@ local function YMCRE_fake_script() -- FLOSS.LocalScript
 	
 	
 end
-coroutine.wrap(YMCRE_fake_script)()
-local function KCPGW_fake_script() -- ZEN.LocalScript 
+coroutine.wrap(VRIK_fake_script)()
+local function KRMDTZ_fake_script() -- ZEN.LocalScript 
 	local script = Instance.new('LocalScript', ZEN)
 
 	local Zen = script.Parent
@@ -1525,8 +1351,8 @@ local function KCPGW_fake_script() -- ZEN.LocalScript
 	
 	
 end
-coroutine.wrap(KCPGW_fake_script)()
-local function IXYAZT_fake_script() -- NINJA.LocalScript 
+coroutine.wrap(KRMDTZ_fake_script)()
+local function MJAXNV_fake_script() -- NINJA.LocalScript 
 	local script = Instance.new('LocalScript', NINJA)
 
 	local Ninja = script.Parent
@@ -1539,8 +1365,8 @@ local function IXYAZT_fake_script() -- NINJA.LocalScript
 	
 	
 end
-coroutine.wrap(IXYAZT_fake_script)()
-local function LMIEGI_fake_script() -- ZOMBIE.LocalScript 
+coroutine.wrap(MJAXNV_fake_script)()
+local function UJQAMYQ_fake_script() -- ZOMBIE.LocalScript 
 	local script = Instance.new('LocalScript', ZOMBIE)
 
 	local Zombie = script.Parent
@@ -1552,8 +1378,8 @@ local function LMIEGI_fake_script() -- ZOMBIE.LocalScript
 	end)
 	
 end
-coroutine.wrap(LMIEGI_fake_script)()
-local function HJVAR_fake_script() -- DAB.Script 
+coroutine.wrap(UJQAMYQ_fake_script)()
+local function SSQB_fake_script() -- DAB.Script 
 	local script = Instance.new('Script', DAB)
 
 	local Dab = script.Parent
@@ -1564,8 +1390,8 @@ local function HJVAR_fake_script() -- DAB.Script
 		Target:Fire(string_1);
 	end)
 end
-coroutine.wrap(HJVAR_fake_script)()
-local function LGBJTFP_fake_script() -- HEADLESS.Script 
+coroutine.wrap(SSQB_fake_script)()
+local function ZTLLGP_fake_script() -- HEADLESS.Script 
 	local script = Instance.new('Script', HEADLESS)
 
 	local Headless = script.Parent
@@ -1577,8 +1403,8 @@ local function LGBJTFP_fake_script() -- HEADLESS.Script
 	end)
 	
 end
-coroutine.wrap(LGBJTFP_fake_script)()
-local function UZXEZMI_fake_script() -- close.LocalScript 
+coroutine.wrap(ZTLLGP_fake_script)()
+local function TGGUPT_fake_script() -- close.LocalScript 
 	local script = Instance.new('LocalScript', close)
 
 	script.Parent.MouseButton1Down:Connect(function()
@@ -1586,8 +1412,8 @@ local function UZXEZMI_fake_script() -- close.LocalScript
 	end)
 	
 end
-coroutine.wrap(UZXEZMI_fake_script)()
-local function JOALB_fake_script() -- Strip.LocalScript 
+coroutine.wrap(TGGUPT_fake_script)()
+local function HKRT_fake_script() -- Strip.LocalScript 
 	local script = Instance.new('LocalScript', Strip)
 
 	local v = false
@@ -1603,16 +1429,16 @@ local function JOALB_fake_script() -- Strip.LocalScript
 	end)
 	
 end
-coroutine.wrap(JOALB_fake_script)()
-local function TURIXG_fake_script() -- RenScripts.DraggableSystem 
+coroutine.wrap(HKRT_fake_script)()
+local function MJKSH_fake_script() -- RenScripts.DraggableSystem 
 	local script = Instance.new('LocalScript', RenScripts)
 
 	script.Parent.Active = true
 	script.Parent.Draggable = true
 	
 end
-coroutine.wrap(TURIXG_fake_script)()
-local function NAWIIFV_fake_script() -- TextLabel_3.LocalScript 
+coroutine.wrap(MJKSH_fake_script)()
+local function EFKFXFT_fake_script() -- TextLabel_3.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel_3)
 
 	wait(1)
@@ -1644,8 +1470,8 @@ local function NAWIIFV_fake_script() -- TextLabel_3.LocalScript
 	script.Parent.Parent.TextButton.Visible = true
 	
 end
-coroutine.wrap(NAWIIFV_fake_script)()
-local function NBZOKNN_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(EFKFXFT_fake_script)()
+local function VXJP_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local text = script.Parent
@@ -1706,4 +1532,4 @@ local function NBZOKNN_fake_script() -- TextButton.LocalScript
 	end
 	
 end
-coroutine.wrap(NBZOKNN_fake_script)()
+coroutine.wrap(VXJP_fake_script)()
